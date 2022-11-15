@@ -1,0 +1,41 @@
+<a class="[ skip-link ] [ button ]" href="#main-content">Перейти до контенту</a>
+<div class="[ banner ] [ font-base ] [ bg-dark color-light ]">
+  <a href="/blog/rozluchennya-pid-chas-voyennogo-stanu:-chi-mozhlivo-ta-chi-yakos-vidriznyayetsya-vid-mirnogo-chasu/" target="_blank">Розлучення під час війни</a>
+</div>
+<header role="banner" class="site-head">
+  <div class="wrapper">
+    <div class="site-head__inner">
+      <a
+        href="/"
+        aria-label="{{ site.name }} - головна"
+        class="site-head__brand"
+      >
+        {% include "partials/brand.svg" %}
+      </a>
+      <burger-menu max-width="600">
+        <nav
+          class="[ nav ] [ site-head__nav ] [ font-sans ]"
+          aria-label="primary"
+        >
+          <ul class="nav__list" role="list">
+            {% for item in navigation.items %}
+            <li>
+              <a
+                href="{{ item.url }}"
+                {{
+                helpers.getLinkActiveState(item.url,
+                page.url)
+                |
+                safe
+                }}
+                >{{ item.text }}</a
+              >
+            </li>
+            {% endfor %}
+          </ul>
+        </nav>
+      </burger-menu>
+      <a data-icon="🤙" href="tel:+380971336851" class="call-us">+380971336851</a>
+    </div>
+  </div>
+</header>
