@@ -24,7 +24,6 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ 'src/assets/images': 'assets/images' });
   eleventyConfig.addPassthroughCopy({ 'src/assets/js/libraries': 'assets/js/libraries' });
   eleventyConfig.addPassthroughCopy({ 'src/assets/svg': 'assets/svg' });
-  eleventyConfig.addPassthroughCopy({ 'src/public': '/' });
 
   return {
     dir: {
