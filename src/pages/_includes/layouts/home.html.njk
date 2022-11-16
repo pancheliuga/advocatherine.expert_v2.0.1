@@ -1,43 +1,51 @@
-{% extends "layouts/base.html.njk" %} 
-{% block content %}
-<div class="wrapper">
-  <article class="intro">
-    <div class="[ intro__header ] [ radius frame ]">
-      <h1 class="[ intro__heading ] [ weight-normal text-500 md:text-600 ]">
-        {{ intro.eyebrow }}
-        <em class="text-700 lg:text-800 weight-bold">{{ intro.main }}</em>
-      </h1>
-    </div>
-    <div class="[ intro__content ] [ flow ]">
-      <h3 class="[ intro__summary ] [ color-dark-shade ]">
-        {{ intro.summary }}
-      </h3>
-      <ul role="list" class="[ services__list ]">
-        {% for item in intro.services %}
-        <li data-icon="✏️" class="flow flow-space-300 weight-bold">
-          {{ item }}
-        </li>
-        {% endfor %}
-      </ul>
-      <a href="{{ intro.buttonUrl }}" class="button">{{ intro.buttonText }}</a>
-    </div>
-    <div class="intro__media">
-      <picture class="intro__image">
-        <source
-          media="(min-width: 37em)"
-          srcset="/images/hero/hero_full.webp"
-        />
-        <img
-          src="/images/hero/hero_face.webp"
-          alt="Фото адвоката Катерини Панчелюги"
-        />
-      </picture>
-    </div>
-  </article>
-</div>
+{% extends 'layouts/base.html.njk' %}
 
-{% set ctaContent = primaryCTA %} {% include "partials/cta.html.njk" %} {% include
-"partials/media-space.html.njk" %} {% include "partials/key-facts.html.njk" %} {%
-include "partials/recent-feed.html.njk" %} {% set ctaContent = cta %} {% include
-"partials/cta.html.njk" %} 
-{% include "partials/fifty-fifty.html.njk" %} {% endblock %}
+{% block title %}Business ecosystem template{% endblock %}
+{% block meta_description %}Business ecosystem page template from the W3C design system{% endblock %}
+
+{% block body_class %}class="ecosystem"{% endblock %}
+
+{% block breadcrumbs %}
+	{% include 'components/breadcrumbs.html.njk' %}
+{% endblock %}
+
+{% block content %}
+
+	{% include 'components/hero-landing.html.njk' %}
+
+	{% include 'components/fifty-fifty.html.njk' %}
+
+	{% include 'components/text.html.njk' %}
+
+	{% include 'components/fifty-fifty-reversed.html.njk' %}
+
+	{% include 'components/group-list.html.njk' %}
+
+	{% include 'components/text.html.njk' %}
+
+	{% include 'components/activity.html.njk' %}
+
+	{% include 'components/content-slider.html.njk' %}
+
+	{% include 'components/members.html.njk' %}
+
+	{% include 'components/evangelists.html.njk' %}
+
+{% endblock %}
+
+{% block crosslinks %}
+{% endblock %}
+
+{% block scripts %}
+
+<script>
+	if (document.documentElement.classList.contains('js')) {
+
+		let sliderScript = document.createElement('script');
+		sliderScript.src = '/dist/assets/js/slider.js';
+		document.querySelector('body').appendChild(sliderScript);
+
+	}
+</script>
+
+{% endblock %}
