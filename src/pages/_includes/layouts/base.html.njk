@@ -1,32 +1,27 @@
+
 <!doctype html>
 <html lang="en" class="no-js">
+
 <head>
-    <!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','GTM-T2MHXWN');</script>
-  <!-- End Google Tag Manager -->
     <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <meta name="google-site-verification" content="W3thHA5nGMeU6JiweK4fgZmXEJQm4oHfJKXl27kpEsw"/>
-    {% include "partials/meta-info.html" %}
-    <link rel="alternate" type="application/rss+xml" href="{{ site.url }}/feed.xml"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="home" href="https://advocatherine.expert/"/>
+    <title>{% block title %}{% endblock %} - W3C Design System</title>
 
-    <script src="/assets/js/libraries/fontfaceobserver.js"></script>
+    <meta property="og:description" name="description" content="{% block meta_description %}{% endblock %}"/>
+    <meta property="og:image" name="image" content="/dist/assets/images/w3c-opengraph-image.png">
+
+    <script src="/dist/assets/js/libraries/fontfaceobserver.js"></script>
 
     <script>
         let myFont = new FontFaceObserver('Noto Sans');
         Promise.all([myFont.load()]).then(function () {
             document.documentElement.className += " fonts-loaded";
         });
-        var jsAssetsPath = "/assets/";
+        var jsAssetsPath = "/dist/assets/";
     </script>
 
-    <link rel="stylesheet" href="{{'/assets/styles/core.css?ver=1.4.1' | url | safe}}" media="screen"/>
+    <link rel="stylesheet" href="/dist/assets/styles/core.css?ver=1.4.1" media="screen"/>
 
     <!--
     CSS Mustard Cut
@@ -34,13 +29,13 @@
     Edge, Chrome 39+, Opera 26+, Safari 9+, iOS 9+, Android ~5+, Android UCBrowser ~11.8+
     FF 47+
     -->
-    <link rel="stylesheet" id="advanced-stylesheet" href="{{'/assets/styles/advanced.css?ver=1.4.1' | url | safe}}" media="
+    <link rel="stylesheet" id="advanced-stylesheet" href="/dist/assets/styles/advanced.css?ver=1.4.1" media="
         only print,
         only all and (pointer: fine), only all and (pointer: coarse), only all and (pointer: none),
         only all and (min--moz-device-pixel-ratio:0) and (display-mode:browser), (min--moz-device-pixel-ratio:0) and (display-mode:fullscreen)
     ">
 
-    <link rel="stylesheet" href="{{'/assets/styles/print.css' | url | safe}}" media="print"/>
+    <link rel="stylesheet" href="/dist/assets/styles/print.css" media="print"/>
 
     <script>
         (function() {
@@ -49,7 +44,7 @@
                 let head = document.querySelector('head');
                 // Add main JS
                 let jsMain = document.createElement('script');
-                jsMain.src = '/assets/js/main.min.js?ver=1.4.1';
+                jsMain.src = '/dist/assets/js/main.js?ver=1.4.1';
                 jsMain.defer = true;
                 head.appendChild(jsMain);
                 // Update classname to show JS is available
@@ -57,37 +52,41 @@
             }
         })();
     </script>
+
 </head>
 
-<body {% block body_classes %}class="{{ body_classes|default('default') }}"{% endblock %}>
-  <!-- Google Tag Manager (noscript) -->
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T2MHXWN"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
-    <a class="skip-link" href="#main">Перейти до контенту</a>
-<div class="grid-wrap">
-    <div class="wrap">
-        <header class="global-header">
-            <span role="status" aria-live="polite"></span>
-            {% block banner %}
-            {% endblock banner %}
-            {% block global_nav %}
-            {% endblock global_nav %}
-        </header>
-        {% block breadcrumbs %}
-        {% endblock breadcrumbs %}
-        <main id="main">
-            {% block content %}{% endblock %}
-            {% block main %}{% endblock %}
-        </main>
-        {% block crosslinks %}
-        {% endblock crosslinks %}
-    </div>
-    {% block footer %}
-    {% endblock %}
-</div>
+<body {% block body_class %}{% endblock %}>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div class="grid-wrap">
+        <div class="wrap">
 
-{% block closing_body_scripts %}{% endblock %}
+            {% block header %}
+                {% include 'components/header-nav.html.twig' %}
+            {% endblock %}
+
+            {% block breadcrumbs %}
+            {% endblock %}
+
+            <main id="main">
+                {% block content %}
+                {% endblock %}
+            </main>
+
+            {% block crosslinks %}
+            {% endblock %}
+
+            {% block comments %}
+            {% endblock %}
+
+        </div>
+
+        {% include 'components/footer.html.twig' %}
+
+    </div>
+
+        {% block scripts %}
+        {% endblock %}
+    {{ javascript|raw }}
 </body>
 
 </html>

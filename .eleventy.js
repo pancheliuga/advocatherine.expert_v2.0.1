@@ -1,6 +1,9 @@
 const fs = require('fs');
+const htmlMinTransform = require('./src/transforms/html-min-transform.js');
+const isProduction = process.env.NODE_ENV === 'production';
 
 module.exports = function (eleventyConfig) {
+
   eleventyConfig.setBrowserSyncConfig({
     callbacks: {
       ready: function (err, bs) {
@@ -16,6 +19,11 @@ module.exports = function (eleventyConfig) {
     },
     files: ['dist/**/*'],
   });
+
+  // Only minify HTML if we are in production because it slows builds _right_ down
+  if (isProduction) {
+    eleventyConfig.addTransform('htmlmin', htmlMinTransform);
+  }
 
   eleventyConfig.addWatchTarget('./src/assets/styles/');
   eleventyConfig.addWatchTarget('./src/assets/js/');
