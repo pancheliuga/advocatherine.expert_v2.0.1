@@ -20,6 +20,10 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addWatchTarget('./src/assets/styles/');
   eleventyConfig.addWatchTarget('./src/assets/js/');
 
+  eleventyConfig.addPassthroughCopy({ 'src/assets/fonts': 'assets/fonts' });
+  eleventyConfig.addPassthroughCopy({ 'src/assets/images': 'assets/images' });
+  eleventyConfig.addPassthroughCopy({ 'src/assets/js/libraries': 'assets/js/libraries' });
+  eleventyConfig.addPassthroughCopy({ 'src/assets/svg': 'assets/svg' });
   eleventyConfig.addPassthroughCopy({ 'src/public': '/' });
 
   return {
