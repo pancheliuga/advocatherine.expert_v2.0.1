@@ -42,7 +42,8 @@
 	if (document.documentElement.classList.contains('js')) {
 
 		let sliderScript = document.createElement('script');
-		sliderScript.src = '/dist/assets/js/slider.js';
+		sliderScript.src = '/assets/js/slider.js';
+		sliderScript.type = 'module'
 		document.querySelector('body').appendChild(sliderScript);
 
 	}
