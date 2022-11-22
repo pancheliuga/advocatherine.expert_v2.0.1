@@ -52,7 +52,7 @@
 	@include mq($max-width) {
 
 		flex-basis: auto;
-		flex-wrap: nowrap;
+		flex-wrap: nowrap; 
 		padding-bottom: 0;
 
 	}

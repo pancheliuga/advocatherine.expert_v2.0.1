@@ -31,11 +31,15 @@
       "titleLink": "/prices/"
     },
     {
-      "title": "Блог",
-      "titleLink": "/blog/"
+      "title": "Про себе",
+      "titleLink": "/about/"
     },
     {
       "title": "Контакти",
       "titleLink": "/contact/"
+    },
+    {
+      "title": "Блог",
+      "titleLink": "/blog/"
     }
 ]

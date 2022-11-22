@@ -1,6 +1,19 @@
 {
   "name": "Адвокат Панчелюга Катерина",
   "url": "https://advocatherine.expert",
-  "authorName": "Pancheliuga Oleksandr",
-  "authorEmail": "pan4ik@gmail.com"
+  "phoneNumber": "+380971336851",
+  "workEmail": "advocate.rivne@gmail.com",
+  "workingHours": "Пн-Пт 9:00 - 18:00",
+  "bannerOffer": [
+    {
+      "text": "Розлучення під час війни",
+      "url": "https://advocatherine.expert"
+    }
+  ],
+  "bannerCTA": [
+    {
+      "text": "Консультація",
+      "url": "https://advocatherine.expert"
+    }
+  ]
 }
