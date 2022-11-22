@@ -21,7 +21,7 @@
 
 .global-header .banner {
 
-	background-color: $light-blue;
+	background-color: $deep-green;
 	padding-bottom: rem(10);
 	padding-top: rem(10);
 
@@ -62,47 +62,6 @@
 .banner__inner p {
 
 	margin-left: rem(10);
-
-}
-
-[dir="rtl"] {
-
-	.banner__inner p {
-
-		margin-left: 0;
-		margin-right: rem(10);
-
-	}
-
-}
-
-#lang-nav {
-
-	background-color: $mist-gray;
-
-	.l-cluster > * {
-
-		justify-content: flex-end;
-		margin: 0 rem(-10);
-
-	}
-
-	.l-cluster.l-cluster > * > * {
-
-		margin: 0 rem(10);
-
-	}
-
-	a {
-
-		@include txt-eris;
-
-		color: $off-black;
-		display: block;
-		padding-bottom: rem(12);
-		padding-top: rem(12);
-
-	}
 
 }
 

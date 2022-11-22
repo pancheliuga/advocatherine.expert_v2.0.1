@@ -10,7 +10,6 @@
 
 #global-nav {
 
-	border-bottom: solid 1px $border-color;
 	display: block;
 	padding-bottom: rem(18);
 	padding-top: rem(18);
@@ -44,6 +43,7 @@
 
 	background-color: $white;
 	display: flex;
+	justify-content: flex-end;
 	flex-basis: 100%;
 	flex-wrap: wrap;
 	padding-bottom: rem(45);
@@ -73,7 +73,7 @@ li.top-nav-item + li.top-nav-item {
 
 	@include mq($max-width) {
 
-		margin-inline-start: auto;
+		// margin-inline-start: auto;
 
 	}
 
@@ -189,21 +189,6 @@ li.top-nav-item + li.top-nav-item {
 		background-color: $focus-color;
 		background-image: linear-gradient(to top, $black 3px, $focus-color 3px, $focus-color);
 		color: $black;
-
-	}
-
-}
-
-.account-login {
-
-	flex-basis: 100%;
-	font-size: rem(14) !important;
-
-	@include mq($max-width) {
-
-		flex-basis: auto;
-		padding-bottom: rem(10);
-		padding-top: rem(10);
 
 	}
 

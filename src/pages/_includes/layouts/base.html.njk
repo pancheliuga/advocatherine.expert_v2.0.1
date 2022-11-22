@@ -56,17 +56,18 @@
 
 </head>
 
-<body {% block body_class %}{% endblock %}>
-    <a class="skip-link" href="#main">Skip to content</a>
-    <div class="grid-wrap">
-        <div class="wrap">
-
-            {% block header %}
-                {% include 'components/header-nav.html.njk' %}  
-            {% endblock %}
-
-            {% block breadcrumbs %}
-            {% endblock %}
+<a class="skip-link" href="#main">Перейти до контенту</a>
+<div class="grid-wrap">
+    <div class="wrap">
+        <header class="global-header">
+            <span role="status" aria-live="polite"></span>
+            {% block banner %}
+                {% include 'components/banner.html.njk' %}
+            {% endblock banner %}
+            {% block global_nav %}
+                {% include 'components/global-nav.html.njk' %}
+            {% endblock global_nav %}
+        </header>
 
             <main id="main">
                 {% block content %}
